@@ -24,10 +24,11 @@ public class DebtService {
 		for (int i = 1; i <= monts; i++) {
 			
 			double s = calculator.calculateS();
+			double pn = calculator.calculatePn();
 			
 			calculator.pay(s);
 			
-			result.add(new DebtModel(i, date.getMonthValue() + "/" + date.getYear(), s, calculator.calculatePn(), calculator.getSn(), calculator.getX()));
+			result.add(new DebtModel(i, date.getMonthValue() + "/" + date.getYear(), s, pn, calculator.getSn(), calculator.getX()));
 			
 			date = date.plusMonths(1);
 		}
